@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: Nick Farinacci <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: Farinacci.30 <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: 9/19/25 @12:40 PM <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Nick Farinacci
+- **Dot Number**: Farinacci.30
+- **Due Date**: 9/19/25 @12:40 PM
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,15 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+My main interests are video games, anime, working out, and music. I've played video games all throughout my childhood and is my main source of enjoyment in life. I've spent countless hours playing games with friends, relaxing on my own with an RPG or open-world adventure game, and even played competitively on my high school Esports team. Consequently, I wanted to be a CSE major so I could learn to develop my own video games in the future. Then, anime and music have just been more ways for me to relax from the stress of school. Finally, I've mostly used the gym as a way to keep active and feel more proud about my physical fitness. While I don't have as extreme results as most people I see do, going has made me feel positive about the progress I have made in my health.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -131,8 +115,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +182,86 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Inventory
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of the Inventory component is to contain miscellaneous values. The intent is to be like a library that stores different data types and allows you to extract them as need be. Then, with the proper space, the different variables held within the inventory can be manipulated. This could be in terms of removing or adding an item of a certain type or just tracking what items are currently contained.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void add(String item, int pos)`: Stores item in `this` at a given position
+    - `String remove (String item)`: Takes `item` out of `this` and returns it
+    - `int totalItems()`: reports the total number of `items` in `this`
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `boolean isEmpty()`: Checks to see if `this` is currently empty.
+    - `boolean hasItem(String item)`: Checks to see if `this` contains a particular `item.`
+    - `Set<String> uniqueItems()`: Returns a set that contains all of the unique entries within `this.`
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would need to be mutable to contain multiple elements at different indexes.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think it would rely on the Map class in regards to using the key and value system to track how many of a particular item is in it.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It may need to define constants for the maximum number of an item that can be stored.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - For the methods I have currently listed, I do not think you can use any of the kernal methods in the secondary methods.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Music Playlist
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of the Music Playlist component is to contain names of songs to play in a particular order. The intent is to act as a way to track an order of songs to be played, then be able to rearrange them as one pleases. From there, the order can be changed as desired. An additional hope would be changing what song is next in the order and being able to estimate the time it would take for the playlist to loop.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void play(String songName)`: The `songName` is inserted into `this` and will begin playing.
+    - `void addSong(String songName, int duration)`: The `songName` will be added to `this.` The variable `duration` will also be important later on for a secondary method.
+    - `String removeSong(String songName)`: Removes `songName` from `this` and returns it to the user.
+    - `String removeAnySong()`: Removes a random song and returns it.
+    - `void insertSong(String songName, int pos)`: allows you to place `songName` anywhere in `this.`
+    - `int songAt(String songName)`: returns the index of `songName` in `this.`
+    - `void length()`: returns the number of songs in `this.`
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void shuffle()`: `This` would be shuffled into a random order for the user.
+    - `String totalDuration()`: Returns the time it would take for one to listen to every song in `this.` (Could be a String or int and either be in hours and minutes or just minutes).
+    - `void playNext(int posOfSong)`: Moves the song at `posOfSong` and brings it to the 1st index of `this.`
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - The music playlist component would need to be mutable, since you will have to change songs, length, and order frequently.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component would primarily rely on either queue, as it would be very similar to an actual playlist, or use a map to keep track of songs and how long the song plays for.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I do not think that a music playlist would need any enums or constants since it should be able to contain as many songs as desired. If anything, I would say that a music playlist might be able to use enums to define different genres of music contained within the playlist.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, specifically, you can use the methods removeAnySong, insertSong, removeSong, and songAt for the secondary methods shuffle and playNext.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: Playable Character
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of the Playable Character component is to model stats of different characters and be able to change them as necessary, similar to a character creation screen. The intent is to model different values to corresponding traits of a character, then provide goals for the player to achieve to improve upon the traits.
+      interface.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void createChar(String name, String className)`: Use `name` and `className` to identify the character.
+    - `void setHealth(int value)`: Set the health stat of the character. Other stats would also be implemented, such as strength, defense, and speed.
+    - `void getExp()`: Returns `this.exp` value. Will be helpful for later methods.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void addExp(int amount)`: Method to augment the exp the character has so stats can increase. Adds `amount` to `this.exp.`
+    - `boolean canLevelUp()`: method that checks if `this.exp` has passed a threshold to increase their characters stats.
+    - `void levelUp()`: Allows the character to level up, increasing their stats as a result.
+    - `void damageCalc(int damage)`: Lowers the players health count by `damage.` Other checks can then be implemented to see if the health has dropped to 0 to act as a "game over."
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component would be mutable because the values for the different stats and experience must be altered throughout the growth of the playable character.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I can see this component relying on naturalNumbers for tracking stat values and determining whether or not the health has reached zero. I can also see the use of map in storing the information for each stat corresponding to a character.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component would use constants for variables like an exp threshold, if it will be static for each level, health max and mins, and stat caps.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - You can utilize "get" methods in secondary methods, such as using getExp in addExp. You need to know if the character currently has any exp and add it to the amount given in the "addExp" method.
 
 ## Post-Assignment
 
@@ -269,8 +269,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -309,8 +307,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -322,8 +318,6 @@ you have to submit any PDFs.
 <!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
