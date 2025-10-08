@@ -1,12 +1,10 @@
 # Portfolio Part 2: Component Proof-of-Concept
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Nick Farinacci
+- **Dot Number**: Farinacci.30
+- **Due Date**: 10/9/25 @ 12:40 PM
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 Previously, you brainstormed three ideas, and hopefully you got some feedback as
 well. However, it's impossible to know how reasonable your design actually is
@@ -30,8 +28,6 @@ the more work you can put in now, the better.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 ```
 
 ## Assignment Learning Objectives
-
-<!-- TODO: read the assignment learning objectives then delete this comment -->
 
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
@@ -117,6 +111,8 @@ Below is further rationale/explanation for the rubric items above:
 <!-- TODO: briefly argue your choice of design or design something
 new; then delete this comment -->
 
+I feel like the Inventory component is the design that will have the best balance between challenging and interesting. While my other two choices (Music playlist and Character) are also cool to me, I think that they would require complex implementation, either in the difficulty of creation in general or in the sheer number of methods that could be created. For instance, with the music playlist, I feel like it would overwhelm me with how many potential methods I could create and it felt more of a last resort option to fill in the three components requirement. Then, Playable Character is another example in which I feel that implementing stats and tracking the variables would become more of a hassle than it is worth. With inventory, however, I have a clear picture of how I could utilize other variable types we have in both the OSU component library or Java in general to assist in the creation process. Moreover, inventory is a foundational aspect of many genres of games and it would still allow me to freely challenge myself while making something correlating to what I want to do as a future career.
+
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
 > preference is to use GitHub Desktop. From there, you can click the `Branch`
@@ -125,8 +121,6 @@ new; then delete this comment -->
 > VSCode to run git commands. It's entirely up to you. Regardless of your choice,
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
