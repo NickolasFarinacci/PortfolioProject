@@ -65,17 +65,13 @@ class Inventory {
         this.items.add(item, p.value() + amount);
     }
 
-    public Map.Pair<String, Integer> removeFromItem(String item, int amount) {
+    public void removeFromItem(String item, int amount) {
         assert this.items.value(
                 item) > amount : "Violation of: this.items.value(item) > amount";
         assert this.items
                 .hasKey(item) : "Violation of: this.items.hasKey(item)";
         Map.Pair<String, Integer> p = this.items.remove(item);
         this.items.add(item, p.value() - amount);
-
-        Map.Pair<String, Integer> pair = new Map.Pair<>(item, amount);
-
-        return pair;
 
     }
 

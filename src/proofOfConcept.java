@@ -60,10 +60,6 @@ public class proofOfConcept {
 
         out.println("After removing 16, the new amount of Material C is: "
                 + playerInventory.value("Material C"));
-
-        out.println("Removed " + itemAndAmount.key() + " with quantity "
-                + itemAndAmount.value());
-
     }
 
 }
