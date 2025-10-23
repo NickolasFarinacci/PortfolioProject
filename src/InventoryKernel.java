@@ -1,6 +1,9 @@
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import components.map.Map;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import components.standard.Standard;
@@ -10,10 +13,13 @@ import components.standard.Standard;
  * 
  * @author Nick Farinacci
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
  *
  */
 public interface InventoryKernel<K, V> extends Standard<Map<K, V>> {
 =======
+=======
+>>>>>>> Stashed changes
  * 
  * @param <I>
  *           type of {@code Inventory} domain (item) entries
@@ -57,6 +63,9 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
         N value();
 
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     /**
@@ -99,7 +108,11 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @ensures this = #this \ {(item, quantity)}
      */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Map.Pair<String, Integer> removeItem(String item);
+=======
+    InventoryKernel.Pair<String, Integer> removeItem(String item);
+>>>>>>> Stashed changes
 =======
     InventoryKernel.Pair<String, Integer> removeItem(String item);
 >>>>>>> Stashed changes
