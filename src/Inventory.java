@@ -1,4 +1,4 @@
-import components.set.*;
+import components.set.Set;
 
 /**
  * Layered implementations of secondary methods for {@code Inventory}.
@@ -8,7 +8,7 @@ import components.set.*;
  * @param <V>
  *            type of {@code Inventory} range (associated value) entries
  */
-public abstract class Inventory implements InventoryKernel {
+interface Inventory<I, N> extends InventoryKernel<I, N> {
 
     /**
      * Adds a given quantity of an item to the inventory.
@@ -21,9 +21,7 @@ public abstract class Inventory implements InventoryKernel {
      * @requires item is in the inventory.
      * @ensures the quantity of the item is increased by amount.
      */
-    void addToItem(String item, int amount) {
-
-    }
+    void addToItem(I item, N amount);
 
     /**
      * Removes a given quantity of an item from the inventory.
@@ -37,9 +35,7 @@ public abstract class Inventory implements InventoryKernel {
      *           the current quantity of the item.
      * @ensures the quantity of the item is decreased by amount.
      */
-    void removeFromItem(String item, int amount) {
-
-    }
+    void removeFromItem(I item, N amount);
 
     /**
      * Returns a set of all unique items in the inventory.
@@ -48,12 +44,7 @@ public abstract class Inventory implements InventoryKernel {
      *
      * @ensures uniqueItems = { all items in the inventory }
      */
-    Set<String> uniqueItems() {
-
-
-        // This statement is just to let the code compile.
-        return null;
-    }
+    Set<String> uniqueItems();
 
     /**
      * Checks if the inventory is empty.
@@ -62,10 +53,6 @@ public abstract class Inventory implements InventoryKernel {
      *
      * @ensures isEmpty = (|this| = 0)
      */
-    boolean isEmpty() {
-
-        // This statement is just to let the code compile.
-        return false;
-    }
+    boolean isEmpty();
 
 }

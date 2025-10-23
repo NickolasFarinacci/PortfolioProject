@@ -4,6 +4,10 @@ import components.standard.Standard;
  * Interface InventoryKernel.
  *
  * @author Nick Farinacci
+ * @param <I>
+ *            type of {@code InventoryKernel} domain (item) entries
+ * @param <N>
+ *            type of {@code InventoryKernel} range (associated value) entries
  *
  */
 public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
@@ -52,7 +56,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires item is in the inventory.
      * @ensures value = [the value of the given item]
      */
-    int value(String item);
+    N value(I item);
 
     /**
      * Adds a given quantity of an item to the inventory.
@@ -68,7 +72,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires quantity > 0
      * @ensures this = #this union {(item, quantity)}
      */
-    void addItem(String item, int quantity);
+    void addItem(I item, N quantity);
 
     /**
      * Removes a given item with its amount from the inventory.
@@ -81,7 +85,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires item is in the inventory.
      * @ensures this = #this \ {(item, quantity)}
      */
-    InventoryKernel.Pair<String, Integer> removeItem(String item);
+    InventoryKernel.Pair<I, N> removeItem(I item);
 
     /**
      * Checks if the inventory has a given item.
@@ -92,7 +96,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      *
      * @ensures hasItem = true if item is in the inventory, false otherwise.
      */
-    boolean hasItem(String item);
+    boolean hasItem(I item);
 
     /**
      * Returns the total number of items in the inventory.
