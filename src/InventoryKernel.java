@@ -1,34 +1,12 @@
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import components.map.Map;
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 import components.standard.Standard;
 
 /**
  * Interface InventoryKernel.
- * 
- * @author Nick Farinacci
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
  *
- */
-public interface InventoryKernel<K, V> extends Standard<Map<K, V>> {
-=======
-=======
->>>>>>> Stashed changes
- * 
- * @param <I>
- *           type of {@code Inventory} domain (item) entries
- * @param <N>
- *          type of {@code Inventory} range (associated value) entries
+ * @author Nick Farinacci
  *
  */
 public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
-
 
     /**
      * An Inventory entry (item-number pair).
@@ -63,10 +41,6 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
         N value();
 
     }
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
     /**
      * Returns the value of a given item.
@@ -107,15 +81,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires item is in the inventory.
      * @ensures this = #this \ {(item, quantity)}
      */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    Map.Pair<String, Integer> removeItem(String item);
-=======
     InventoryKernel.Pair<String, Integer> removeItem(String item);
->>>>>>> Stashed changes
-=======
-    InventoryKernel.Pair<String, Integer> removeItem(String item);
->>>>>>> Stashed changes
 
     /**
      * Checks if the inventory has a given item.
