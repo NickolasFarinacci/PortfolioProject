@@ -6,13 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## 2025.09.19
+## 2025.11.07
 
 ### Added
 
-- Designed an Inventory component
-- Designed a Music Playlist component
-- Designed a Playable Character component
+- Designed abstract class for Inventory component
+
+### Updated
+
+- Changed design to include ...
+  - Updated contracts that account for potential errors caused from casting. Casting also necessary to maintain created generic types within Inventory component.
+  - Abstract class utilizes a map along with a constant for the maximum items contained within Inventory to ensure a defined upper limit.
+  - Includes toString, equals, and hashcode methods in addition to previously identified secondary methods.
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Calendar Versioning](https://calver.org/) of
+the following form: YYYY.0M.0D.
+
+## 2025.10.22
+
+### Added
+
+- Designed kernel and enhanced interfaces for Inventory component
+
+### Updated
+
+- Changed design to include ...
+  - Independent Inventory.Pair nested interface within Inventory itself.
+  - Formal contracts noting alterations made when Inventory methods are called, requires and ensures clauses, and depicting what each method achieves.
 
 # Changelog
 
@@ -43,35 +68,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## 2025.10.22
+## 2025.09.19
 
 ### Added
 
-- Designed kernel and enhanced interfaces for Inventory component
-
-### Updated
-
-- Changed design to include ...
-  - Independent Inventory.Pair nested interface within Inventory itself.
-  - Formal contracts noting alterations made when Inventory methods are called, requires and ensures clauses, and depicting what each method achieves.
-
-  # Changelog
-
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Calendar Versioning](https://calver.org/) of
-the following form: YYYY.0M.0D.
-
-## 2025.11.07
-
-### Added
-
-- Designed abstract class for Inventory component
-
-### Updated
-
-- Changed design to include ...
-  - Updated contracts that account for potential errors caused from casting. Casting also necessary to maintain created generic types within Inventory component.
-  - Abstract class utilizes a map along with a constant for the maximum items contained within Inventory to ensure a defined upper limit.
-  - Includes toString, equals, and hashcode methods in addition to previously identified secondary methods.
+- Designed an Inventory component
+- Designed a Music Playlist component
+- Designed a Playable Character component
