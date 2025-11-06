@@ -8,7 +8,7 @@ import components.set.Set;
  * @param <V>
  *            type of {@code Inventory} range (associated value) entries
  */
-interface Inventory<I, N> extends InventoryKernel<I, N> {
+public interface Inventory<I, N> extends InventoryKernel<I, N> {
 
     /**
      * Adds a given quantity of an item to the inventory.
