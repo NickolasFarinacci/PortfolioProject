@@ -3,12 +3,13 @@ import components.set.Set;
 /**
  * Layered implementations of secondary methods for {@code Inventory}.
  *
- * @param <K>
+ * @param <String>
  *            type of {@code Inventory} domain (key) entries
- * @param <V>
+ * @param <Integer>
  *            type of {@code Inventory} range (associated value) entries
  */
-public interface Inventory<I, N> extends InventoryKernel<I, N> {
+public interface Inventory<String, Integer>
+        extends InventoryKernel<String, Integer> {
 
     /**
      * Adds a given quantity of an item to the inventory.
@@ -21,7 +22,7 @@ public interface Inventory<I, N> extends InventoryKernel<I, N> {
      * @requires item is in the inventory.
      * @ensures the quantity of the item is increased by amount.
      */
-    void addToItem(I item, N amount);
+    void addToItem(String item, Integer amount);
 
     /**
      * Removes a given quantity of an item from the inventory.
@@ -35,7 +36,7 @@ public interface Inventory<I, N> extends InventoryKernel<I, N> {
      *           the current quantity of the item.
      * @ensures the quantity of the item is decreased by amount.
      */
-    void removeFromItem(I item, N amount);
+    void removeFromItem(String item, int amount);
 
     /**
      * Returns a set of all unique items in the inventory.

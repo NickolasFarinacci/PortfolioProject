@@ -4,29 +4,30 @@ import components.standard.Standard;
  * Interface InventoryKernel.
  *
  * @author Nick Farinacci
- * @param <I>
+ * @param <String>
  *            type of {@code InventoryKernel} domain (item) entries
- * @param <N>
+ * @param <Integer>
  *            type of {@code InventoryKernel} range (associated value) entries
  *
  */
-public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
+public interface InventoryKernel<String, Integer>
+        extends Standard<InventoryKernel<String, Integer>> {
 
     /**
      * An Inventory entry (item-number pair).
      *
-     * @param <I>
+     * @param <String>
      *            type of {@code InventoryKernel} domain (item) entries
-     * @param <V>
+     * @param <Integer>
      *            type of {@code MapKernel} range (associated value) entries
-     * @mathmodel type Pair is modeled by (item: I, number: N)
+     * @mathmodel type Pair is modeled by (item: String, number: Integer)
      * @initially <pre>
-     * (I item, N number):
+     * (String item, Integer number):
      *  ensures
      *   this = (item, number)
      * </pre>
      */
-    interface Pair<I, N> {
+    interface Pair<String, Integer> {
 
         /**
          * Returns this {@code Pair}'s item.
@@ -34,7 +35,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
          * @return the item
          * @aliases reference returned by {@code item}
          */
-        I key();
+        String key();
 
         /**
          * Returns this {@code Pair}'s number.
@@ -42,7 +43,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
          * @return the number
          * @aliases reference returned by {@code number}
          */
-        N value();
+        Integer value();
 
     }
 
@@ -56,7 +57,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires item is in the inventory.
      * @ensures value = [the value of the given item]
      */
-    N value(I item);
+    int value(String item);
 
     /**
      * Adds a given quantity of an item to the inventory.
@@ -72,7 +73,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires quantity > 0
      * @ensures this = #this union {(item, quantity)}
      */
-    void addItem(I item, N quantity);
+    void addItem(String item, int quantity);
 
     /**
      * Removes a given item with its amount from the inventory.
@@ -85,7 +86,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      * @requires item is in the inventory.
      * @ensures this = #this \ {(item, quantity)}
      */
-    InventoryKernel.Pair<I, N> removeItem(I item);
+    InventoryKernel.Pair<String, Integer> removeItem(String item);
 
     /**
      * Checks if the inventory has a given item.
@@ -96,7 +97,7 @@ public interface InventoryKernel<I, N> extends Standard<InventoryKernel<I, N>> {
      *
      * @ensures hasItem = true if item is in the inventory, false otherwise.
      */
-    boolean hasItem(I item);
+    boolean hasItem(String item);
 
     /**
      * Returns the total number of items in the inventory.
