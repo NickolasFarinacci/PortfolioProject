@@ -6,10 +6,6 @@ import components.map.Map1L;
  * with implementations of primary methods.
  *
  * @author Nick Farinacci
- * @param <String>
- *            type of {@code InventoryKernel} domain (item) entries
- * @param <Integer>
- *            type of {@code InventoryKernel} range (associated value) entries
  * @convention This class uses the standard representation for {@code Map}s
  *             defined in the components.standard package.
  * @correspondence this = [value mapping of type String to Integer in a Map]
@@ -37,7 +33,7 @@ public final class InventoryOnMap extends InventorySecondary {
      */
 
     @SuppressWarnings("unchecked")
-    public InventoryOnMap<String, Integer> newInstance() {
+    public InventoryOnMap newInstance() {
         try {
             return this.getClass().getConstructor().newInstance();
         } catch (ReflectiveOperationException e) {
@@ -50,13 +46,13 @@ public final class InventoryOnMap extends InventorySecondary {
         this.createNewRep();
     }
 
-    public void transferFrom(Inventory<String, Integer> source) {
+    public void transferFrom(Inventory source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: this and source are distinct";
-        assert source instanceof InventoryOnMap<String, Integer> : ""
+        assert source instanceof InventoryOnMap : ""
                 + "Violation of: source is of dynamic type Map1L<?,?>";
 
-        InventoryOnMap<String, Integer> localSource = (InventoryOnMap<String, Integer>) source;
+        InventoryOnMap localSource = (InventoryOnMap) source;
         this.map = localSource.map;
         localSource.createNewRep();
     }
@@ -76,8 +72,13 @@ public final class InventoryOnMap extends InventorySecondary {
             this.map.add(item, amount);
 
         } else {
-            throw new IllegalArgumentException(
-                    "Violation of: 0 < amount <= 99");
+
+            if (amountInt > 99) {
+
+                this.map.add(item, 99);
+
+            }
+
         }
 
     }
