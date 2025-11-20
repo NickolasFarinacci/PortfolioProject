@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Nick Farinacci
+- **Dot Number**: Farinacci.30
+- **Due Date**: 11/21/25 @12:40 PM
 
 ## Assignment Overview
 
@@ -39,8 +39,6 @@ of the file. Feel free to reference any of your kernel implementations for
 examples of these.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -120,7 +118,8 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+The main aspects of my convention for the Inventory component are that the only forms of inputs it can contain are strings for the keys and integers for the values. The strings have no other limitations while the integers are a little more complex. Specifically, inventory is not allowed to contain integers above 99. Neither the keys nor the values can contain null. Moreover, a key must contain a set of characters (it cannot be an empty string). The correspondance of inventory is that it utilizes a map to take in items as strings and groups the item name to the amount attached.
+
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
