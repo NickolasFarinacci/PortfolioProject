@@ -1,5 +1,6 @@
 package components.inventory;
 
+import components.inventory.Inventory;
 import components.map.Map;
 import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
