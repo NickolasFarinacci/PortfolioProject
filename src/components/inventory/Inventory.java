@@ -1,9 +1,11 @@
+package components.inventory;
+
 import components.map.Map;
 import components.map.Map1L;
 import components.set.Set;
 import components.set.Set1L;
 
-class Inventory {
+class Inventory<K, V> {
 
     private Map<String, Integer> items;
 

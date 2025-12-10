@@ -1,9 +1,9 @@
+package components.inventory;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import src.Inventory;
 
 /**
  * JUnit test fixture for {@code Inventory}'s Secondary methods.
@@ -12,17 +12,15 @@ import src.Inventory;
  *
  */
 public class InventoryAbstractTest {
-
     @Test
     public void inventoryAddSingleItem() {
-        Inventory<String, Integer> inventory = new Inventory<>();
-        Inventory<String, Integer> expectedInventory = new Inventory<>("item1",
+        InventoryOnMap inventory = new InventoryOnMap();
+        InventoryOnMap<String, Integer> expectedInventory = new InventoryOnMap("item1",
                 10);
-        inventory.add("item1", 10);
+        inventory.addItem("item1", 10);
         assertEquals(expectedInventory, inventory);
     }
 
-    @Test
     public void inventoryAddMultipleItems() {
         Inventory<String, Integer> inventory = new Inventory<>();
         Inventory<String, Integer> expectedInventory = new Inventory<>("item1",

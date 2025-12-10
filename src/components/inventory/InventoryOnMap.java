@@ -1,3 +1,5 @@
+package components.inventory;
+
 import components.map.Map;
 import components.map.Map1L;
 
@@ -61,7 +63,7 @@ public final class InventoryOnMap extends InventorySecondary {
      * Kernel methods ---------------------------------------------------------
      */
 
-    public void addItem(String item, Integer amount) {
+    public final void addItem(String item, Integer amount) {
         assert item != null : "Violation of: item is not null";
         assert amount != null : "Violation of: amount is not null";
 
@@ -83,7 +85,8 @@ public final class InventoryOnMap extends InventorySecondary {
 
     }
 
-    Map.Pair<String, Integer> removeItem(String item) {
+    @Override
+    public Map.Pair<String, Integer> removeItem(String item) {
         assert item != null : "Violation of: item is not null";
         assert this.map.hasKey(item) : "Violation of: item is in this";
 
@@ -91,14 +94,16 @@ public final class InventoryOnMap extends InventorySecondary {
 
     }
 
-    boolean hasItem(String item) {
+    @Override
+    public boolean hasItem(String item) {
         assert item != null : "Violation of: item is not null";
 
         return this.map.hasKey(item);
 
     }
 
-    int value(String item) {
+    @Override
+    public int value(String item) {
         assert item != null : "Violation of: item is not null";
         assert this.map.hasKey(item) : "Violation of: item is in this";
 
@@ -106,7 +111,8 @@ public final class InventoryOnMap extends InventorySecondary {
 
     }
 
-    int totalItems() {
+    @Override
+    public int totalItems() {
 
         int total = 0;
 
