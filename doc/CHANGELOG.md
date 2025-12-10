@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2025.11.07
+
+### Added
+
+- Designed abstract class for Inventory component
+
+### Updated
+
+- Changed design to include ...
+  - Updated contracts that account for potential errors caused from casting. Casting also necessary to maintain created generic types within Inventory component.
+  - Abstract class utilizes a map along with a constant for the maximum items contained within Inventory to ensure a defined upper limit.
+  - Includes toString, equals, and hashcode methods in addition to previously identified secondary methods.
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Calendar Versioning](https://calver.org/) of
+the following form: YYYY.0M.0D.
+
 ## 2025.10.22
 
 ### Added
@@ -39,7 +60,7 @@ the following form: YYYY.0M.0D.
   - Added methods to display the amound of an item and add/remove an amount of that item from the inventory.
   - Implemented the methods as instances and demonstrated the application of each method within a main method
 
-  # Changelog
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
