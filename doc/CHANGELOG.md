@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2025.11.20
+
+### Added
+
+- Designed kernel implementation for Inventory component
+
+### Updated
+
+- Changed design to include ...
+  - Design no longer utilizes generic types and instead requires Inventory to store String and integers respectively.
+  - Updated standard methods to fit for Inventory implementation
+  - Created kernal methods to add/remove keys and values within Inventory. Moreover, methods were made to see what values were stored where and to see how many values total are stored.
+  - Changes were also made to abstract class and interfaces to accomadate for the change from generic types to concrete types.
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Calendar Versioning](https://calver.org/) of
+the following form: YYYY.0M.0D.
+
 ## 2025.11.07
 
 ### Added
