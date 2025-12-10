@@ -1,5 +1,3 @@
-import components.set.Set;
-
 /**
  * Layered implementations of secondary methods for {@code Inventory}.
  *
@@ -57,6 +55,7 @@ public interface Inventory<String, Integer>
     boolean isEmpty();
 
 }
+
 import components.map.Map;
 import components.map.Map1L;
 import components.set.Set;
