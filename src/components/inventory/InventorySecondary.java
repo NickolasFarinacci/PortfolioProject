@@ -1,31 +1,18 @@
 package components.inventory;
 
-import components.map.Map;
-import components.map.Map1L;
 import components.set.Set;
-import components.set.Set1L;
 
 /**
  * Layered implementations of secondary methods for {@code Inventory}.
+ *
+ * @author Nick Farinacci
  */
-public abstract class InventorySecondary extends Inventory {
+public abstract class InventorySecondary implements Inventory {
 
     /**
      * Maximum number of items in the inventory.
      */
     private static final int MAX_ITEMS = 99;
-
-    /**
-     * Storage for items {@code this}.
-     */
-    private Map<String, Integer> storage;
-
-    /**
-     * Default constructor.
-     */
-    public InventorySecondary() {
-        this.storage = new Map1L<String, Integer>();
-    }
 
     /**
      * Adds the given amount to the item in the inventory.
@@ -40,55 +27,52 @@ public abstract class InventorySecondary extends Inventory {
      */
     @Override
     public void addToItem(String item, int amount) {
-        assert this.storage.hasKey(
+        assert this.hasItem(
                 item) : "Precondition violated: item must be in inventory";
 
-        Integer totalItem = this.storage.value(item) + amount;
+        Integer totalItem = this.value(item) + amount;
 
         if (totalItem > MAX_ITEMS) {
             totalItem = MAX_ITEMS;
         }
 
-        this.storage.replaceValue(item, totalItem);
+        this.removeItem(item);
+        this.addItem(item, totalItem);
 
     }
 
     /**
-     * Removes the item from the inventory.
+     * Removes a given quantity of an item from the inventory.
      *
      * @param item
-     *            the item to remove
-     * @updates this
-     * @requires this.storage.hasKey(item)
-     * @ensures <pre>
-     * @return the pair (item, original value of item)
-     * this = #this - item
-     * removeItem = (item, original value of item)
-     * </pre>
-     */
-    @Override
-    public Map.Pair<String, Integer> removeItem(String item) {
-
-        return this.storage.remove(item);
-
-    }
-
-    /**
-     * Returns the set of unique items in the inventory.
+     *            The item to remove from.
+     * @param amount
+     *            The amount to remove.
      *
-     * @return the set of unique items in the inventory
-     * @ensures uniqueItems = {all items in this}
+     * @requires item is in the inventory and amount is less than or equal to
+     *           the current quantity of the item.
+     * @ensures the quantity of the item is decreased by amount.
      */
     @Override
-    public final Set<String> uniqueItems() {
+    public void removeFromItem(String item, int amount) {
+        assert this.hasItem(
+                item) : "Precondition violated: item must be in inventory";
+        assert this.value(
+                item) >= amount : "Precondition violated: amount to remove must"
+                        + "be less than or equal to current quantity";
 
-        Set<String> uniqueItems = new Set1L<String>();
+        int totalItem = this.value(item) - amount;
 
-        for (Map.Pair<String, Integer> p : this.storage) {
-            uniqueItems.add(p.key());
+        if (totalItem == 0) {
+            this.removeItem(item);
+
+        } else {
+
+            this.removeItem(item);
+            this.addItem(item, totalItem);
+
         }
 
-        return uniqueItems;
     }
 
     /**
@@ -100,49 +84,87 @@ public abstract class InventorySecondary extends Inventory {
     @Override
     public final boolean isEmpty() {
 
-        return this.storage.size() == 0;
+        return this.totalItems() == 0;
 
     }
 
+    /**
+     * Returns a string representation of the inventory.
+     *
+     * @return string representation of the inventory
+     * @ensures toString = string representation of the inventory
+     */
     @Override
     public final String toString() {
 
-        String result = "";
+        String result = "{";
+        int size = this.uniqueItems().size();
+        int count = 0;
 
-        for (Map.Pair<String, Integer> p : this.storage) {
-            result += p.key() + ": " + p.value() + "\n";
+        for (String elem : this.uniqueItems()) {
+            if (count == size - 1) {
+                result += elem + ": " + this.value(elem);
+            } else {
+
+                result += elem + ": " + this.value(elem) + ", ";
+                count++;
+            }
         }
 
-        return result;
+        return result + "}";
 
     }
 
+    /**
+     * Compares this inventory to another object for equality.
+     *
+     * @param obj
+     *            the object to compare to
+     * @return true if the inventories are equal, false otherwise
+     * @ensures equals = (this and obj are equal inventories)
+     */
     @Override
     public final boolean equals(Object obj) {
 
-        boolean result = false;
+        boolean result = true;
 
-        if (obj == null) {
-            result = false;
-        }
         if (this == obj) {
             result = true;
         }
-        if (!(obj instanceof InventorySecondary)) {
+        if (!(obj instanceof Inventory)) {
             result = false;
         } else {
-            InventorySecondary other = (InventorySecondary) obj;
-            result = this.storage.equals(other.storage);
+            Inventory other = (Inventory) obj;
+
+            Set<String> thisItems = this.uniqueItems();
+            Set<String> otherItems = other.uniqueItems();
+
+            if (!thisItems.equals(otherItems)) {
+                result = false;
+            }
+
+            for (String item : thisItems) {
+                if (this.value(item) != other.value(item)) {
+                    result = false;
+                }
+            }
+
         }
 
         return result;
 
     }
 
+    /**
+     * Returns the hash code of the inventory.
+     *
+     * @return hash code of the inventory
+     * @ensures hashCode = hash code of the inventory
+     */
     @Override
     public final int hashCode() {
 
-        return this.storage.hashCode();
+        return this.mapHashCode();
 
     }
 

@@ -1,6 +1,4 @@
-package components.inventory;
-
-import components.inventory.Inventory;
+import components.inventory.InventoryOnMap;
 import components.map.Map;
 import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
@@ -11,8 +9,8 @@ public class proofOfConcept {
 
                 SimpleWriter out = new SimpleWriter1L();
 
-                Inventory playerInventory = new Inventory();
-                Inventory empty = new Inventory();
+                InventoryOnMap playerInventory = new InventoryOnMap();
+                InventoryOnMap empty = new InventoryOnMap();
 
                 playerInventory.addItem("Material A", 12);
                 playerInventory.addItem("Material B", 25);

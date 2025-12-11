@@ -2,6 +2,8 @@ package components.inventory;
 
 import components.map.Map;
 import components.map.Map1L;
+import components.set.Set;
+import components.set.Set1L;
 
 /**
  * An implementation of {@code InventorySecondary} represented as a {@link Map}
@@ -9,7 +11,10 @@ import components.map.Map1L;
  *
  * @author Nick Farinacci
  * @convention This class uses the standard representation for {@code Map}s
- *             defined in the components.standard package.
+ *             defined in the components.standard package. The keys are of type
+ *             {@code String} and the values are of type {@code Integer}.
+ *             Moreover, no key in the map has value less than or equal to 0 and
+ *             no value. No value can also exceed 99.
  * @correspondence this = [value mapping of type String to Integer in a Map]
  */
 public final class InventoryOnMap extends InventorySecondary {
@@ -17,8 +22,15 @@ public final class InventoryOnMap extends InventorySecondary {
     /*
      * Private members --------------------------------------------------------
      */
+
+    /**
+     * The map representing this inventory.
+     */
     private Map<String, Integer> map;
 
+    /**
+     * Creates a new representation of this inventory.
+     */
     private void createNewRep() {
         this.map = new Map1L<String, Integer>();
     }
@@ -26,7 +38,11 @@ public final class InventoryOnMap extends InventorySecondary {
     /*
      * Constructors -----------------------------------------------------------
      */
-    private InventoryOnMap() {
+
+    /**
+     * Default constructor.
+     */
+    public InventoryOnMap() {
         this.createNewRep();
     }
 
@@ -34,7 +50,7 @@ public final class InventoryOnMap extends InventorySecondary {
      * Standard methods -------------------------------------------------------
      */
 
-    @SuppressWarnings("unchecked")
+    @Override
     public InventoryOnMap newInstance() {
         try {
             return this.getClass().getConstructor().newInstance();
@@ -44,10 +60,16 @@ public final class InventoryOnMap extends InventorySecondary {
         }
     }
 
+    @Override
     public void clear() {
         this.createNewRep();
     }
 
+    /**
+     * Transfers the contents of the source inventory to this inventory.
+     * 
+     * @param source
+     */
     public void transferFrom(Inventory source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: this and source are distinct";
@@ -63,25 +85,12 @@ public final class InventoryOnMap extends InventorySecondary {
      * Kernel methods ---------------------------------------------------------
      */
 
-    public final void addItem(String item, Integer amount) {
+    @Override
+    public void addItem(String item, int amount) {
         assert item != null : "Violation of: item is not null";
-        assert amount != null : "Violation of: amount is not null";
+        assert amount > 0 : "Violation of: amount > 0";
 
-        int amountInt = (int) amount;
-
-        if (0 < amountInt && amountInt <= 99) {
-
-            this.map.add(item, amount);
-
-        } else {
-
-            if (amountInt > 99) {
-
-                this.map.add(item, 99);
-
-            }
-
-        }
+        this.map.add(item, amount);
 
     }
 
@@ -123,6 +132,59 @@ public final class InventoryOnMap extends InventorySecondary {
         }
 
         return total;
+
+    }
+
+    @Override
+    public void addToItem(String item, int amount) {
+
+        final int ninetyNine = 99;
+        int total = this.map.value(item) + amount;
+        if (total > ninetyNine) {
+            total = ninetyNine;
+        }
+
+        this.map.replaceValue(item, total);
+
+    }
+
+    @Override
+    public void removeFromItem(String item, int amount) {
+        if (this.map.value(item) - amount <= 0) {
+            this.map.remove(item);
+        } else {
+            this.map.replaceValue(item, this.map.value(item) - amount);
+        }
+    }
+
+    @Override
+    public Set<String> uniqueItems() {
+
+        Set<String> uniqueItems = new Set1L<String>();
+
+        for (Map.Pair<String, Integer> p : this.map) {
+
+            uniqueItems.add(p.key());
+
+        }
+
+        return uniqueItems;
+
+    }
+
+    @Override
+    public int mapHashCode() {
+        return this.map.hashCode();
+    }
+
+    @Override
+    public void transferFrom(InventoryKernel other) {
+        assert other != null : "Violation of: other is not null";
+        assert other != this : "Violation of: this and other are distinct";
+
+        InventoryOnMap localOther = (InventoryOnMap) other;
+        this.map = localOther.map;
+        localOther.createNewRep();
 
     }
 

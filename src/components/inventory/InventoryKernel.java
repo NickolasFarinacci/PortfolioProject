@@ -1,51 +1,15 @@
+package components.inventory;
+
+import components.set.Set;
 import components.standard.Standard;
 
 /**
  * Interface InventoryKernel.
  *
  * @author Nick Farinacci
- * @param <String>
- *            type of {@code InventoryKernel} domain (item) entries
- * @param <Integer>
- *            type of {@code InventoryKernel} range (associated value) entries
  *
  */
-public interface InventoryKernel<String, Integer>
-        extends Standard<InventoryKernel<String, Integer>> {
-
-    /**
-     * An Inventory entry (item-number pair).
-     *
-     * @param <String>
-     *            type of {@code InventoryKernel} domain (item) entries
-     * @param <Integer>
-     *            type of {@code MapKernel} range (associated value) entries
-     * @mathmodel type Pair is modeled by (item: String, number: Integer)
-     * @initially <pre>
-     * (String item, Integer number):
-     *  ensures
-     *   this = (item, number)
-     * </pre>
-     */
-    interface Pair<String, Integer> {
-
-        /**
-         * Returns this {@code Pair}'s item.
-         *
-         * @return the item
-         * @aliases reference returned by {@code item}
-         */
-        String key();
-
-        /**
-         * Returns this {@code Pair}'s number.
-         *
-         * @return the number
-         * @aliases reference returned by {@code number}
-         */
-        Integer value();
-
-    }
+public interface InventoryKernel extends Standard<InventoryKernel> {
 
     /**
      * Returns the value of a given item.
@@ -86,7 +50,16 @@ public interface InventoryKernel<String, Integer>
      * @requires item is in the inventory.
      * @ensures this = #this \ {(item, quantity)}
      */
-    InventoryKernel.Pair<String, Integer> removeItem(String item);
+    components.map.Map.Pair<String, Integer> removeItem(String item);
+
+    /**
+     * Returns a set of all unique items in the inventory.
+     *
+     * @return Set<String> The set of unique items.
+     *
+     * @ensures uniqueItems = { all items in the inventory }
+     */
+    Set<String> uniqueItems();
 
     /**
      * Checks if the inventory has a given item.

@@ -1,17 +1,9 @@
 package components.inventory;
 
-import components.set.Set;
-
 /**
  * Layered implementations of secondary methods for {@code Inventory}.
- *
- * @param <String>
- *            type of {@code Inventory} domain (key) entries
- * @param <Integer>
- *            type of {@code Inventory} range (associated value) entries
  */
-public interface Inventory<String, Integer>
-        extends InventoryKernel<String, Integer> {
+public interface Inventory extends InventoryKernel {
 
     /**
      * Adds a given quantity of an item to the inventory.
@@ -24,7 +16,7 @@ public interface Inventory<String, Integer>
      * @requires item is in the inventory.
      * @ensures the quantity of the item is increased by amount.
      */
-    void addToItem(String item, Integer amount);
+    void addToItem(String item, int amount);
 
     /**
      * Removes a given quantity of an item from the inventory.
@@ -41,15 +33,6 @@ public interface Inventory<String, Integer>
     void removeFromItem(String item, int amount);
 
     /**
-     * Returns a set of all unique items in the inventory.
-     *
-     * @return Set<String> The set of unique items.
-     *
-     * @ensures uniqueItems = { all items in the inventory }
-     */
-    Set<String> uniqueItems();
-
-    /**
      * Checks if the inventory is empty.
      *
      * @return boolean True if the inventory is empty, false otherwise.
@@ -57,5 +40,12 @@ public interface Inventory<String, Integer>
      * @ensures isEmpty = (|this| = 0)
      */
     boolean isEmpty();
+
+    /**
+     * Returns the hash code of the inventory map.
+     *
+     * @return int The hash code of the inventory map.
+     */
+    int mapHashCode();
 
 }
