@@ -50,8 +50,6 @@ course, but just knowing about them could set you up for long term success.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -305,18 +303,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I think I have a better overall understanding of the effort it takes to put together a structured program on your own. Throughout this project, I had to come up with my own ideas and go about creating those ideas on my own. There weren't any skeletons for me to do portions of the projects, so it was up to me to figure out where to put everything and why. I feel like most of the experience I gained came from this final portion of the project, mostly due to how I had to put together all of the pieces and ensure they worked in tandum. Then, I had to build situations in which this component would be useful. I especially enjoyed this part and wish I was able to do that more in classes!
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+I think the portfolio project showed me that I had a gap of knowledge in understanding how the hierarchy of OSU components worked. I always memorized the charts for components like sets and queues, but never fully comprehended how they work or how each piece applied to the actual coding process. I think the portfolio project itself helped me fill in those gaps, as it divided up each part of the diagram and allowed me to better visualize the interfaces and classes. Moreover, I also found that the portfolio project helped me at better understanding the idea of an "abstract class" and where that portion of the hierarchy is implemented.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I think I enjoyed this final portion of the project a lot more than any of the other portions. The whole reason why I am in software development is because I love video games, which the use cases allowed me to finally explore. While it was only a simple shop simulation and crafting simulation, I still had a lot of fun applying what I did to some of the games that I have played. The rest of the projects did feel dreadful at times, but pushing through the mental obstacles I had has made me more proud of the end product.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -324,25 +322,28 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+The most significant skill that I learned is planning out ideas and altering them on the fly. There were a few different times in which I wanted to create aspects for my component (such as my own generic types or my own pairs), but they were too complex for me to reasonably implement. Thus, I had to quickly pivot to concrete variable types like strings and integers. Moreover, there was a lot of time management skills with balancing this project with other classes as well. The classes I have taken this semester are more spaced out, but also made me susceptible to assignments due on the weekend. I had to effectively plan out assignments along with deadlines for this project in order for me to have time to do them and ask questions when necessary.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Developed creative skills and innovative abilities
+- Improved ability to adapt to less ideal situations
+- Gained time management competenece and multi-tasking
+
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I think that I am more interested in the topic that I picked! I enjoyed making a way to store a name to an item and attaching a count to it. I think it would've been hectic but more interesting to even have the ability to assign a currency value to an item as well. While I know it would be difficult creating a variable that could track 3 characteristics, I think that it would be a fun challenge and offer a lot more accessiblity for the use cases that already made.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I think that I could start by getting familar with clubs, such as the game creation club to see how to take the next step towards furthering my programming skills. Additionally, I could learn more coding languages, since the only language I currently know is Java. While Java is a good programming language to start, I feel as though most games are coded using other languages instead. Lastly, I don't currently know fo any mentors to help me stay on the path to a software developer. Although, I think the professors I have had since coming to OSU would be a good place to start learning more about what goes into video game development.
 
 ### Changelog
 
