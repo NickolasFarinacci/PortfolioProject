@@ -1,4 +1,27 @@
+#
+
 # Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Calendar Versioning](https://calver.org/) of
+the following form: YYYY.0M.0D.
+
+## 2025.12.10
+
+### Added
+
+- Designed test suite for Inventory component
+- Designed two different use cases for Inventory component
+
+### Updated
+
+- Changed design to include ...
+- Test files for the Kernel and Secondary methods
+- User cases to show off potential uses of the Inventory component
+- Troubleshooting for Kernel and Secondary methods to ensure proper compiling
+- Updates to convention and added Javadoc comments to other methods
 
 All notable changes to this project will be documented in this file.
 
@@ -115,7 +138,7 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed design to include ...
-    * Map component that stores material type (String) as the key and the amount
+  - Map component that stores material type (String) as the key and the amount
     of the item as an integer.
-    * Added methods to display the amound of an item and add/remove an amount of that item from the inventory.
-    * Implemented the methods as instances and demonstrated the application of each method within a main method 
+  - Added methods to display the amound of an item and add/remove an amount of that item from the inventory.
+  - Implemented the methods as instances and demonstrated the application of each method within a main method
